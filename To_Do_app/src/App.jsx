@@ -2,28 +2,28 @@
 import Todo from "./component/AppName"
 import AppTodo from "./component/AppTodo"
 import TodoItems from "./component/TodoItems"
+import { useState } from "react"
+import TaskWrite from "./component/TaskWrite"
 import "./App.css"
 function App() {
-   const todoItms = [
-   {
-    name: 'Eat Breakfast',
-    date:'15-11-2023'
-   },
-   {
-    name: 'Read Book',
-    date:'15-11-2023'
-   },
-   {
-    name: 'Goto College',
-    date:'15-11-2023'
-   },
-   ]
-  return ( 
+    const [initialTodo , setTodo] = useState([]);
+    const  Entertodo = (itemsName, itemDueDate)=>{
+      console.log(`new items ${itemsName} ${itemDueDate}`)
+      let newItems = [...initialTodo, {name:itemsName,date:itemDueDate}];
+      setTodo(newItems);
+    } 
+    const handleDelet=(todoItemName)=>{
+      const newTodoItems = initialTodo.filter((item)=> item.name!==todoItemName);
+       setTodo(newTodoItems)
+    
+    }
+  return (  
   <> 
   <center className= "todo-container">
     <Todo />
-    <AppTodo/>
-    <TodoItems Todoitms={todoItms}></TodoItems>
+    <AppTodo Entertodo={Entertodo}></AppTodo>
+    {initialTodo.length === 0 &&<TaskWrite ></TaskWrite>}
+    <TodoItems Todoitms={initialTodo} onDeletClick={handleDelet}></TodoItems>
     {/* <TodoItems Todoitms={todoItms}></TodoItems> */}
    </center>
    </>
