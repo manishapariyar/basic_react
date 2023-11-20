@@ -1,0 +1,7 @@
+.container{
+  border: 3px solid rgb(204, 203, 203);
+  margin: 10px;
+  width: 50%;
+  min-width: 300px;
+  padding: 14px;
+}

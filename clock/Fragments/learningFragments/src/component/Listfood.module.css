@@ -1,0 +1,33 @@
+.n-list{
+  background-color: rgb(113, 195, 166);
+
+}
+.kg-span{
+  /* background-color: rgb(234, 209, 209); */
+  color: rgb(160, 104, 25);
+  font-weight: 800;
+ 
+}
+.kg-h1{
+background-color: rgb(204, 237, 196);
+color: green;
+text-align: center;
+  
+}
+.button{
+ 
+  float: right;
+  background-color: lightseagreen;
+  color:blue;
+  width: 60px;
+  height: 35px;
+  border: 2px solid rgb(235, 241, 235);
+  border-radius: 5px;
+  
+}
+.foodinput{
+  width: 100%;
+  font-size: 20px;
+  padding: 5px;
+  margin: 10px 5px;
+}
