@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function AppTodo({Entertodo}){
-   const [todoname , settodoname] = useState();
-   const [todoDate , settodoDate] = useState();
+   const [todoname , settodoname] = useState('');
+   const [todoDate , settodoDate] = useState('');
    const handleNameChange = (event)=>{
       settodoname(event.target.value);
    }
