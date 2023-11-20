@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { MdOutlineAddAlarm } from "react-icons/md";
 function AppTodo({Entertodo}){
    const [todoname , settodoname] = useState('');
    const [todoDate , settodoDate] = useState('');
@@ -21,7 +21,7 @@ function AppTodo({Entertodo}){
   value={todoname}
     onChange={handleNameChange}/></div>
     <div className="col-4"><input type="date" value={todoDate} onChange={handleDateChange}/></div>
-    <div className="col-2"><button type="button" className="btn btn-success" onClick={handleAddButtonClicked}>Add</button></div>
+    <div className="col-2"><button type="button" className="btn btn-success" onClick={handleAddButtonClicked}><MdOutlineAddAlarm /></button></div>
   </div>
    )
 }
