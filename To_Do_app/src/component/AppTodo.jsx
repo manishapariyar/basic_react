@@ -1,28 +1,22 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { MdOutlineAddAlarm } from "react-icons/md";
 function AppTodo({Entertodo}){
-   const [todoname , settodoname] = useState('');
-   const [todoDate , settodoDate] = useState('');
-   const handleNameChange = (event)=>{
-      settodoname(event.target.value);
+ 
+   const todoName = useRef();
+   const todoDate = useRef();
+   let handleAddButtonClicked =(event)=>{
+      event.preventDefault();
+    const todoNameElement =  todoName.current.value ;
+    const todoDateElement = todoDate.current.value ;
+    Entertodo(todoNameElement,todoDateElement);
    }
-   const handleDateChange = (event)=>{
-    settodoDate(event.target.value);
-   }
-   const handleAddButtonClicked =() =>{
-      Entertodo(todoname,todoDate);
-      settodoname("");
-      settodoDate("");
-   }
-
    return ( 
-    <div className="row m-row">
-    <div className="col-6"><input type="text" placeholder="Enter your Todo here" 
-  value={todoname}
-    onChange={handleNameChange}/></div>
-    <div className="col-4"><input type="date" value={todoDate} onChange={handleDateChange}/></div>
-    <div className="col-2"><button type="button" className="btn btn-success" onClick={handleAddButtonClicked}><MdOutlineAddAlarm /></button></div>
-  </div>
+    <form className="row m-row"  onSubmit={handleAddButtonClicked} >
+    <div className="col-6"><input ref={todoName} placeholder="Enter your Todo here"/></div>
+    <div className="col-4"><input type="date"  ref={todoDate}  /></div>
+    <div className="col-2"><button type="sumit" className="btn btn-success"><MdOutlineAddAlarm /></button></div>
+  </form>
    )
 }
+
 export default  AppTodo;
