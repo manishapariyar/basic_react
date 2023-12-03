@@ -1,0 +1,42 @@
+
+.app-container{
+  display: flex;
+}
+.content{
+  width: 100%;
+}
+.SideBar{
+  min-height: 800px;
+  
+}
+.Createform{
+  width: 80%;
+  background-color: rgb(223, 228, 230);
+  color: rgb(32, 32, 30);
+  margin: 10%;
+  padding: 10px;
+  font-size: 20px;
+  /* text-align: center; */
+}
+.Createform input, textarea{
+  width: 80%;
+
+}
+.postCard{
+  width: 500px;
+  margin: 10px 40px;
+}
+.hashtag{
+  margin: 0px 3px;
+}
+.Reaction{
+  margin: 10px 5px;
+}
+.welcomeMsg{
+  margin: 100px 0;
+}
+.spinner{
+
+  margin: 10%;
+}
+
